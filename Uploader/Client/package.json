@@ -1,0 +1,19 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^4.16.0",
+    "csv-parser": "^3.0.0",
+    "kafka-node": "^5.0.0",
+    "moments": "0.0.2",
+    "mysql": "^2.18.1"
+  }
+}

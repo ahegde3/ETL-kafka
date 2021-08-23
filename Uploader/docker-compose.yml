@@ -1,0 +1,69 @@
+version: "3"
+services:
+  mysql:
+    container_name: db
+    image: mysql/mysql-server:8.0.23
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: experiment
+      MYSQL_USER: "user"
+      # You can use whatever password you like
+      MYSQL_PASSWORD: "password"
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: "password"
+    expose:
+      # Opens port 3306 on the container
+      - "3306"
+    volumes:
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql  
+  uploader:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  uploader2:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  uploader3:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  uploader4:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  uploader5:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+  uploader6:
+    build: ./Client
+    command: npm start
+    depends_on: 
+      - mysql
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+

@@ -1,0 +1,8 @@
+version: "3"
+services:
+  ingestion:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
